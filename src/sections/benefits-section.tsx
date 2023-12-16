@@ -55,12 +55,12 @@ const BenefitsSection = () => {
   return (
     <section ref={ref} className="grid grid-cols-[37.5%,62.5%] px-[2vw]">
       <div>
-        <h2 className="text-[1vw] sticky top-[50vh]">[BENEFITS]</h2>
+        <h2 className="text-[0.8vw] sticky top-[50vh]">[BENEFITS]</h2>
       </div>
 
       <ul className="mr-[2vw] leading-[9vw]">
         {benefits.map((benefit) => (
-          <li key={benefit} id="item" className="text-[8vw] font-light active:blur-0">
+          <li key={benefit} id="item" className="text-[8vw] active:blur-0">
             {benefit}
           </li>
         ))}

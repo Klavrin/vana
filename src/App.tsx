@@ -2,7 +2,7 @@ import CoverSection from './sections/cover-section'
 import DescriptionSection from './sections/description-section'
 import BenefitsSection from './sections/benefits-section'
 import CardsSection from './sections/cards-section'
-import ParalaxImageSection from './sections/paralax-image-section'
+import ParallaxImageSection from './sections/parallax-image-section'
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <DescriptionSection />
       <BenefitsSection />
       <CardsSection />
-      <ParalaxImageSection />
+      <ParallaxImageSection />
     </main>
   )
 }
