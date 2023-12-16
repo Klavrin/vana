@@ -44,7 +44,6 @@ const ParallaxImageSection = () => {
 
   return (
     <ParallaxImage>
-      {/* <div className="w-full flex"> */}
       <div className="self-end z-20 h-[50vw] py-[5vw]">
         <div className="pl-[2vw] z-20">
           <h3 className="text-[0.8vw] uppercase">[Microdose]</h3>

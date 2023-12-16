@@ -30,7 +30,7 @@ const ParallaxImage = ({ children }: ParallaxImageProps) => {
   return (
     <section
       ref={ref}
-      className="h-[180vh] overflow-hidden bg-[url('./src/assets/microdose-cover.webp')] bg-cover bg-center flex relative"
+      className="h-[102vw] overflow-hidden bg-[url('./src/assets/microdose-cover.webp')] bg-cover bg-center flex relative"
       style={{ backgroundPositionY: '-35vw' }}
     >
       {children}
