@@ -6,7 +6,7 @@ const CoverSection = () => {
         <span>BREATH</span>
       </h1>
 
-      <p className="text-[1vw] font-light max-w-[15vw] relative right-[56.7vw] text-justify">
+      <p className="text-[1vw] font-light max-w-[15vw] relative right-[56.7vw] text-justify leading-[1.3vw]">
         VANA is the mobile app designed to radically improve wellbeing and cultivate self
         awareness through the power of breathwork.
       </p>

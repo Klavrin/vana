@@ -15,7 +15,7 @@ const Card = ({ cardNumber, title, description, extraStyles, id }: CardProps) =>
     <div
       id={id}
       className={
-        'w-[30vw] h-[36vw] flex flex-col justify-between border-[0.09vw] border-white rounded-tl-[4vw] rounded-br-[4vw] px-[2vw] py-[4vw] relative ' +
+        'w-1/3 h-[36vw] flex flex-col justify-between border-[0.09vw] border-white rounded-tl-[4vw] rounded-br-[4vw] px-[2vw] py-[4vw] relative ' +
         extraStyles
       }
     >

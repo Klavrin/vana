@@ -58,7 +58,7 @@ const CardsSection = () => {
         />
       </div>
 
-      <p className="text-[1vw] font-light max-w-[15vw] relative top-[35vw] text-justify">
+      <p className="text-[1vw] font-light max-w-[15vw] relative top-[35vw] text-justify leading-[1.3vw]">
         The act of breathing is a beautiful reminder to do what comes naturally. It’s the
         first thing we do when we come into this world, and the last thing we do when we
         leave it.
