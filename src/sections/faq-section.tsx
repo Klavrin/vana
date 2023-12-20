@@ -1,5 +1,11 @@
 import { useState } from 'react'
 
+/**
+ * set the display of the p tag to flex, but the opacity is 0
+ * the second i do that the divs starts expanding until it reaches its position (how do we get this position???)
+ * while the div is expading, the opacity of the p tag is transitioned from 0 to 1.
+ */
+
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
@@ -70,22 +76,38 @@ const FaqSection = () => {
         <div>
           {questions.map((question, index) => (
             <div
+              id="question"
               key={question.title}
-              className="w-full py-[0.8vw] border-t border-white last:border-b flex flex-col duration-[220ms]"
-              onClick={() => setActiveIndex(activeIndex !== index ? index : null)}
+              className="w-full border-t border-white last:border-b flex flex-col overflow-hidden"
             >
-              <div className="flex justify-between hover:px-[0.5vw] transition-all cursor-pointer select-none">
+              <div
+                className="flex justify-between hover:px-[0.5vw] py-[0.8vw] transition-all duration-[220ms] cursor-pointer select-none"
+                onClick={() => setActiveIndex(activeIndex !== index ? index : null)}
+              >
                 <h3 className="text-[1.4vw] uppercase">{question.title}</h3>
-                <img src="./src/assets/arrow.svg" className="w-[0.8vw]" />
+                <img
+                  src="./src/assets/arrow.svg"
+                  className={`w-[0.8vw] transition-transform duration-[600ms] ${
+                    activeIndex === index && 'rotate-180'
+                  }`}
+                />
               </div>
 
               <div
-                className="flex justify-end px-[0.5vw] my-[2vw]"
-                style={{ display: activeIndex === index ? 'flex' : 'none' }}
+                className={`grid transition-[grid-template-rows] duration-[400ms] ease-in-out ${
+                  activeIndex === index ? `grid-rows-[1fr]` : 'grid-rows-[0fr]'
+                }`}
               >
-                <p className="text-[0.9vw] w-[30vw] leading-[1.2vw]">
-                  {question.description}
-                </p>
+                <div className="flex justify-end overflow-hidden">
+                  <p
+                    className="text-[0.9vw] w-[30vw] leading-[1.2vw] px-[0.5vw] py-[2vw] transition-opacity duration-500"
+                    style={{
+                      opacity: activeIndex === index ? 1 : 0
+                    }}
+                  >
+                    {question.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
