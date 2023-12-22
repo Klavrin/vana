@@ -1,3 +1,5 @@
+import Header from './components/header'
+import Footer from './components/footer'
 import CoverSection from './sections/cover-section'
 import DescriptionSection from './sections/description-section'
 import BenefitsSection from './sections/benefits-section'
@@ -17,19 +19,23 @@ import FaqSection from './sections/faq-section'
 
 const App = () => {
   return (
-    <main>
-      <CoverSection />
-      <DescriptionSection />
-      <BenefitsSection />
-      <CardsSection />
-      <ParallaxImageSection />
-      <BenefitsSection2 />
-      <AppShowcaseSection />
-      <ParallaxImageSection2 />
-      <BenefitsSection3 />
-      <AppShowcaseSection2 />
-      <FaqSection />
-    </main>
+    <>
+      <Header />
+      <main>
+        <CoverSection />
+        <DescriptionSection />
+        <BenefitsSection />
+        <CardsSection />
+        <ParallaxImageSection />
+        <BenefitsSection2 />
+        <AppShowcaseSection />
+        <ParallaxImageSection2 />
+        <BenefitsSection3 />
+        <AppShowcaseSection2 />
+        <FaqSection />
+      </main>
+      <Footer />
+    </>
   )
 }
 
