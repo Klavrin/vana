@@ -63,7 +63,7 @@ const FaqSection = () => {
   ]
 
   return (
-    <section className="grid grid-cols-[34.5%,65.5%] px-[2vw] pt-[2vw] pb-[8vw]">
+    <section id="faq" className="grid grid-cols-[34.5%,65.5%] px-[2vw] pt-[2vw] pb-[8vw]">
       <div>
         <h2 className="text-[0.8vw]">[FAQ]</h2>
       </div>

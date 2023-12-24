@@ -5,9 +5,10 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 type ParallaxImageProps = {
   children: ReactNode
   imgUrl: string
+  id?: string
 }
 
-const ParallaxImage = ({ children, imgUrl }: ParallaxImageProps) => {
+const ParallaxImage = ({ children, imgUrl, id }: ParallaxImageProps) => {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -32,6 +33,7 @@ const ParallaxImage = ({ children, imgUrl }: ParallaxImageProps) => {
   return (
     <section
       ref={ref}
+      id={id}
       className={`h-[102vw] overflow-hidden bg-cover bg-center flex relative`}
       style={{
         backgroundPositionY: '-35vw',

@@ -13,7 +13,6 @@ import AppShowcaseSection2 from './sections/app-showcase-section-2'
 import FaqSection from './sections/faq-section'
 
 /**
- *
  * @todo: Make the scroll blurring a reusable component
  */
 
