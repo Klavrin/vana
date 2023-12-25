@@ -1,5 +1,5 @@
-import { ReactNode, useEffect } from 'react'
-import Lenis from '@studio-freight/lenis'
+import { useEffect, ReactNode } from 'react'
+import { lenis } from '../utils/lenis'
 
 type SmoothScrollProps = {
   children: ReactNode
@@ -7,8 +7,6 @@ type SmoothScrollProps = {
 
 const SmoothScroll = ({ children }: SmoothScrollProps) => {
   useEffect(() => {
-    const lenis = new Lenis()
-
     function raf(time: DOMHighResTimeStamp) {
       lenis.raf(time)
       requestAnimationFrame(raf)

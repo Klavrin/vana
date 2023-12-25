@@ -1,5 +1,4 @@
 import Header from './components/header'
-import Footer from './components/footer'
 import CoverSection from './sections/cover-section'
 import DescriptionSection from './sections/description-section'
 import BenefitsSection from './sections/benefits-section'
@@ -11,6 +10,7 @@ import ParallaxImageSection2 from './sections/parallax-image-section-2'
 import BenefitsSection3 from './sections/benefits-section-3'
 import AppShowcaseSection2 from './sections/app-showcase-section-2'
 import FaqSection from './sections/faq-section'
+import Footer from './components/footer'
 
 /**
  * @todo: Make the scroll blurring a reusable component

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import SmallDownloadButton from './small-download-button'
-import scrollToElement from '../utils/scroll-to-element'
+import { lenis } from '../utils/lenis'
 
 const Header = () => {
   const [hideHeader, setHideHeader] = useState(false)
@@ -44,6 +44,7 @@ const Header = () => {
 
   return (
     <header
+      id="header"
       className="w-screen px-[3vw] py-[1.5vw] grid grid-cols-[34.5%,65.5%] fixed z-50 transition-[top] duration-500"
       style={{ top: hideHeader ? '-4vw' : 0 }}
     >
@@ -59,9 +60,9 @@ const Header = () => {
             <li
               key={link.link}
               className="text-[.8vw] uppercase opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-500"
-              onClick={() => scrollToElement(link.elementId)}
+              onClick={() => lenis.scrollTo(`#${link.elementId}`)}
             >
-              {link.link}
+              <a>{link.link}</a>
             </li>
           ))}
         </ul>
