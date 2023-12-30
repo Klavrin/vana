@@ -41,7 +41,7 @@ const DownloadButton = () => {
       </div>
       <div
         ref={ref}
-        className="w-[25vw] h-[25vw] bg-white relative pointer-events-none rounded-full blur-[5vw] opacity-0"
+        className="w-[25vw] h-[25vw] bg-black relative pointer-events-none rounded-full blur-[5vw] opacity-0"
       ></div>
     </div>
   )

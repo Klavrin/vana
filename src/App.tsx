@@ -11,6 +11,7 @@ import BenefitsSection3 from './sections/benefits-section-3'
 import AppShowcaseSection2 from './sections/app-showcase-section-2'
 import FaqSection from './sections/faq-section'
 import Footer from './components/footer'
+import BackgroundBlob from './components/background-blob'
 
 /**
  * @todo: Make the scroll blurring a reusable component
@@ -19,6 +20,7 @@ import Footer from './components/footer'
 const App = () => {
   return (
     <>
+      <BackgroundBlob />
       <Header />
       <main>
         <CoverSection />

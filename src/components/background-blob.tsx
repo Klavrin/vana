@@ -1,9 +1,14 @@
+import { Canvas } from '@react-three/fiber'
+import Mesh from './mesh'
+
 const BackgroundBlob = () => {
   return (
-    <img
-      src="./src/assets/blob.svg"
-      className="w-[100vw] fixed -top-80 -z-50 opacity-30 blur-3xl"
-    />
+    <div className="w-screen h-screen -z-50 fixed blur-[10vw]">
+      <Canvas>
+        <pointLight position={[10, 10, 10]} />
+        <Mesh />
+      </Canvas>
+    </div>
   )
 }
 

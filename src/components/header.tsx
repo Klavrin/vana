@@ -21,24 +21,23 @@ const Header = () => {
   const navLinks = [
     {
       link: 'About Vana',
-      elementId: 'about-vana'
+      elementId: '#about-vana'
     },
     {
       link: 'Microdose',
-      elementId: 'microdose'
+      elementId: '#microdose'
     },
     {
       link: 'Journey',
-      elementId: 'journey'
+      elementId: '#journey'
     },
 
     {
       link: 'FAQ',
-      elementId: 'faq'
+      elementId: '#faq'
     },
     {
-      link: 'Contact',
-      elementId: 'about-vana'
+      link: 'Contact'
     }
   ]
 
@@ -58,11 +57,11 @@ const Header = () => {
         <ul className="h-full flex gap-[3vw] items-center justify-center">
           {navLinks.map((link) => (
             <li
-              key={link.link}
+              key={link.elementId}
               className="text-[.8vw] uppercase opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-500"
-              onClick={() => lenis.scrollTo(`#${link.elementId}`)}
+              onClick={() => lenis.scrollTo(link.elementId)}
             >
-              <a>{link.link}</a>
+              {link.link}
             </li>
           ))}
         </ul>
