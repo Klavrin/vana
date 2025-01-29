@@ -6,10 +6,12 @@ import { fragmentShader } from '../utils/fragment-shader'
 
 const Mesh = ({
   color = '#ffffff',
-  opacity = 1.0
+  opacity = 1.0,
+  sectionProgress
 }: {
   color?: string
   opacity?: number
+  sectionProgress?: number
 }) => {
   const mesh = useRef<THREE.Mesh>(null)
 
@@ -18,7 +20,8 @@ const Mesh = ({
       u_time: { value: 0 },
       u_intensity: { value: 2 },
       u_color: { value: new THREE.Color(color) },
-      u_opacity: { value: opacity }
+      u_opacity: { value: opacity },
+      u_sectionProgress: { value: sectionProgress }
     }),
     []
   )
@@ -40,6 +43,7 @@ const Mesh = ({
     uniform float u_time;
     uniform vec3 u_color;
     uniform float u_opacity;
+    uniform float u_sectionProgress;
 
     varying vec2 vUv;
     varying float vDisplacement;
@@ -48,8 +52,22 @@ const Mesh = ({
         float distort = 2.0 * vDisplacement * u_intensity * sin(vUv.y * 10.0 + u_time);
         vec3 color = u_color;
         gl_FragColor = vec4(color, u_opacity);
+
+        // Color transition based on SECTION progress
+        vec3 startColor = vec3(1.0, 0.0, 0.0); // Red
+        vec3 endColor = vec3(0.5, 0.0, 1.0); // Purple
+        vec3 scrollColor = mix(startColor, endColor, smoothstep(0.0, 1.0, u_sectionProgress));
+        
+        // Combine with original color if needed
+        vec3 finalColor = mix(u_color, scrollColor, u_sectionProgress);
+        
+        gl_FragColor = vec4(finalColor, u_opacity);
     }
   `
+
+  useEffect(() => {
+    uniforms.u_sectionProgress.value = sectionProgress
+  }, [sectionProgress])
 
   return (
     <mesh ref={mesh} scale={[3, 3, 1]}>

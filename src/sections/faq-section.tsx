@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeSectionProgress } from '../store/reducers/blob-reducer'
 
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const ref = useRef(null)
+  const dispatch = useDispatch()
 
   const questions = [
     {
@@ -56,8 +62,29 @@ const FaqSection = () => {
     }
   ]
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    ScrollTrigger.create({
+      trigger: ref.current,
+      start: '-20% center',
+      end: '20% center',
+      scrub: true,
+      markers: true,
+      onUpdate: (self) => {
+        dispatch(changeSectionProgress(self.progress))
+      }
+    })
+
+    return () => ScrollTrigger.getAll().forEach((t) => t.kill())
+  }, [])
+
   return (
-    <section id="faq" className="grid grid-cols-[34.5%,65.5%] px-[2vw] pt-[2vw] pb-[8vw]">
+    <section
+      ref={ref}
+      id="faq"
+      className="grid grid-cols-[34.5%,65.5%] px-[2vw] pt-[2vw] pb-[8vw]"
+    >
       <div>
         <h2 className="text-[0.8vw]">[FAQ]</h2>
       </div>
