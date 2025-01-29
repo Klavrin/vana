@@ -44,7 +44,7 @@ const ParallaxImageSection2 = () => {
 
   return (
     <ParallaxImage id="journey" imgUrl="microdose-cover-2.webp">
-      <div className="self-end z-20 h-[50vw] py-[5vw]">
+      <div id="hello" className="self-end z-20 h-[50vw] py-[5vw]">
         <div className="pl-[2vw] z-20">
           <h3 className="text-[0.8vw] uppercase">[Journey]</h3>
         </div>

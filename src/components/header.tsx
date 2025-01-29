@@ -57,7 +57,7 @@ const Header = () => {
         <ul className="h-full flex gap-[3vw] items-center justify-center">
           {navLinks.map((link) => (
             <li
-              key={link.elementId}
+              key={link.link}
               className="text-[.8vw] uppercase opacity-60 hover:opacity-100 cursor-pointer transition-opacity duration-500"
               onClick={() => lenis.scrollTo(link.elementId)}
             >

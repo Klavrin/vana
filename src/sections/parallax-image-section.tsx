@@ -2,9 +2,12 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import ParallaxImage from '../components/parallax-image'
+// import { useDispatch } from 'react-redux'
+// import { changeColor } from '../store/reducers/blob-reducer'
 
 const ParallaxImageSection = () => {
   const divRef = useRef(null)
+  // const dispatch = useDispatch()
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -17,7 +20,8 @@ const ParallaxImageSection = () => {
           end: 'bottom top',
           scrub: true
         },
-        right: '25vw'
+        right: '25vw',
+        ease: 'none'
       })
       gsap.to('#heading-2', {
         scrollTrigger: {
@@ -26,7 +30,8 @@ const ParallaxImageSection = () => {
           end: 'bottom top',
           scrub: true
         },
-        left: '35vw'
+        left: '35vw',
+        ease: 'none'
       })
       gsap.to('#heading-3', {
         scrollTrigger: {
@@ -35,16 +40,33 @@ const ParallaxImageSection = () => {
           end: 'bottom top',
           scrub: true
         },
-        right: '10vw'
+        right: '10vw',
+        ease: 'none'
       })
     }, divRef.current!)
 
     return () => context.revert()
   }, [])
 
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     console.log(entries[0])
+  //     if (entries[0].boundingClientRect.y > 857) {
+  //       dispatch(changeColor('purple'))
+  //     } else {
+  //       dispatch(changeColor('orange'))
+  //     }
+  //   })
+
+  //   const target = document.getElementById('hello') as HTMLElement
+  //   observer.observe(target)
+
+  //   return () => observer.unobserve(target)
+  // }, [dispatch])
+
   return (
     <ParallaxImage id="microdose" imgUrl="microdose-cover.webp">
-      <div className="self-end z-20 h-[50vw] py-[5vw]">
+      <div id="hello" className="self-end z-20 h-[50vw] py-[5vw]">
         <div className="pl-[2vw] z-20">
           <h3 className="text-[0.8vw] uppercase">[Microdose]</h3>
         </div>

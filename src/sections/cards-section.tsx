@@ -2,9 +2,31 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Card from '../components/card'
+import { useDispatch } from 'react-redux'
+import { changeColor } from '../store/reducers/blob-reducer'
+// import { changeOpacity } from '../store/reducers/blob-reducer'
 
 const CardsSection = () => {
   const ref = useRef(null)
+  const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //   const sectionOffset = document.getElementById('hello')?.offsetTop
+
+  //   if (sectionOffset) {
+  //     const handleScroll = () => {
+  //       const scrollPosition = window.scrollY
+
+  //       if (scrollPosition > 2500) {
+  //         dispatch(changeOpacity(0))
+  //       } else {
+  //         dispatch(changeOpacity(1))
+  //       }
+  //     }
+
+  //     window.addEventListener('scroll', handleScroll)
+  //   }
+  // }, [dispatch])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -30,6 +52,21 @@ const CardsSection = () => {
         y: '-10vw'
       })
     }, ref.current!)
+
+    gsap.to('#blob', {
+      scrollTrigger: {
+        trigger: ref.current,
+        start: '90% bottom',
+        end: '110% 50%',
+        scrub: true,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+        onEnterBack: () => {
+          dispatch(changeColor('#995be5'))
+        }
+      },
+      opacity: 0
+    })
 
     return () => context.revert()
   }, [])

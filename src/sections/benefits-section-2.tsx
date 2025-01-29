@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { useDispatch } from 'react-redux'
+import { changeColor } from '../store/reducers/blob-reducer'
 
 const BenefitsSection2 = () => {
   const ref = useRef(null)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const words: NodeListOf<HTMLElement> = document.querySelectorAll('#item')
@@ -31,6 +34,21 @@ const BenefitsSection2 = () => {
 
     window.addEventListener('scroll', handleScroll)
     handleScroll()
+
+    gsap.to('#blob', {
+      scrollTrigger: {
+        trigger: ref.current,
+        start: '60% bottom',
+        end: '60%% 50%',
+        scrub: true,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+        onEnter: () => {
+          dispatch(changeColor('#dd8755'))
+        }
+      },
+      opacity: 1
+    })
 
     return () => {
       window.removeEventListener('scroll', handleScroll)

@@ -1,11 +1,5 @@
 import { useState } from 'react'
 
-/**
- * set the display of the p tag to flex, but the opacity is 0
- * the second i do that the divs starts expanding until it reaches its position (how do we get this position???)
- * while the div is expading, the opacity of the p tag is transitioned from 0 to 1.
- */
-
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
