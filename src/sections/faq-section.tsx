@@ -70,7 +70,6 @@ const FaqSection = () => {
       start: '-20% center',
       end: '20% center',
       scrub: true,
-      markers: true,
       onUpdate: (self) => {
         dispatch(changeSectionProgress(self.progress))
       }

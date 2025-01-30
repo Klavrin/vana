@@ -55,7 +55,8 @@ const Mesh = ({
 
         // Color transition based on SECTION progress
         vec3 startColor = vec3(1.0, 0.0, 0.0); // Red
-        vec3 endColor = vec3(0.5, 0.0, 1.0); // Purple
+        // vec3 endColor = vec3(0.5, 0.0, 1.0); // Purple
+        vec3 endColor = vec3(0.31, 0.106, 0.769);
         vec3 scrollColor = mix(startColor, endColor, smoothstep(0.0, 1.0, u_sectionProgress));
         
         // Combine with original color if needed
