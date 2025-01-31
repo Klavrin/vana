@@ -67,7 +67,9 @@ const Header = () => {
           ))}
         </ul>
 
-        <CustomButton>DOWNLOAD APP</CustomButton>
+        <CustomButton xDivisor={35} yDivisor={120}>
+          DOWNLOAD APP
+        </CustomButton>
       </nav>
     </header>
   )
