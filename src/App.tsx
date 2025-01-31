@@ -12,6 +12,7 @@ import AppShowcaseSection2 from './sections/app-showcase-section-2'
 import FaqSection from './sections/faq-section'
 import Footer from './components/footer'
 import BackgroundBlob from './components/background-blob'
+import CookieBanner from './components/cookie-banner'
 
 /**
  * @todo: Make the scroll blurring a reusable component
@@ -20,6 +21,7 @@ import BackgroundBlob from './components/background-blob'
 const App = () => {
   return (
     <>
+      <CookieBanner />
       <BackgroundBlob />
       <Header />
       <main>
