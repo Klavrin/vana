@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import SmallDownloadButton from './small-download-button'
 import { lenis } from '../utils/lenis'
 import CustomButton from './custom-button'
 
