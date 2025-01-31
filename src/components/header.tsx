@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import SmallDownloadButton from './small-download-button'
 import { lenis } from '../utils/lenis'
+import CustomButton from './custom-button'
 
 const Header = () => {
   const [hideHeader, setHideHeader] = useState(false)
@@ -66,7 +67,7 @@ const Header = () => {
           ))}
         </ul>
 
-        <SmallDownloadButton innerText="DOWNLOAD APP" />
+        <CustomButton>DOWNLOAD APP</CustomButton>
       </nav>
     </header>
   )
