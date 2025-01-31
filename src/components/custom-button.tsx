@@ -3,17 +3,24 @@ import gsap from 'gsap'
 
 type CustomButtonProps = {
   children: string
-  styles: string
+  styles?: string
+  xDivisor?: number
+  yDivisor?: number
 }
 
-const CustomButton = ({ children, styles }: CustomButtonProps) => {
+const CustomButton = ({
+  children,
+  styles,
+  xDivisor = 22,
+  yDivisor = 100
+}: CustomButtonProps) => {
   const ref = useRef(null)
 
   const onMouseMoveHandler = (e: React.MouseEvent<HTMLElement>) => {
     const rect = (e.target as HTMLElement).getBoundingClientRect()
     gsap.to(ref.current, {
-      x: e.clientX - rect.left - window.innerWidth / 22,
-      y: e.clientY - rect.top - window.innerWidth / 100,
+      x: e.clientX - rect.left - window.innerWidth / xDivisor,
+      y: e.clientY - rect.top - window.innerWidth / yDivisor,
       duration: 0.2
     })
   }
