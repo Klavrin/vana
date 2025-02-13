@@ -6,13 +6,15 @@ type CustomButtonProps = {
   styles?: string
   xDivisor?: number
   yDivisor?: number
+  onClick?: () => void
 }
 
 const CustomButton = ({
   children,
   styles,
   xDivisor = 22,
-  yDivisor = 100
+  yDivisor = 100,
+  onClick
 }: CustomButtonProps) => {
   const ref = useRef(null)
 
@@ -49,6 +51,7 @@ const CustomButton = ({
       onMouseOver={onMouseOverHandler}
       onMouseLeave={onMouseLeaveHandler}
       onMouseMove={onMouseMoveHandler}
+      onClick={onClick}
     >
       <div
         ref={ref}
