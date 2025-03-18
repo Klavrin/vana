@@ -68,7 +68,7 @@ const FaqSection = () => {
     ScrollTrigger.create({
       trigger: ref.current,
       start: '-20% center',
-      end: '20% center',
+      end: '40% center',
       scrub: true,
       onUpdate: (self) => {
         dispatch(changeSectionProgress(self.progress))
